@@ -18,10 +18,6 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * Contribución de:
- *
- * Dario Correal
- *
  """
 
 
@@ -44,7 +40,7 @@ operación seleccionada.
 # ___________________________________________________
 
 
-servicefile = 'singapur_bus_routes/bus_routes_14000.csv'
+servicefile = 'singapur_bus_routes/bus_routes_50.csv'
 initialStation = None
 
 # ___________________________________________________
@@ -83,7 +79,8 @@ def optionThree(cont):
 
 
 def optionFour(cont, initialStation):
-    controller.minimumCostPaths(cont, initialStation)
+    paths = controller.minimumCostPaths(cont, initialStation)
+    print("Tiempo de ejecución: " + str(paths[1]))
 
 
 def optionFive(cont, destStation):

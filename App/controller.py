@@ -18,13 +18,10 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * Contribución de:
- *
- * Dario Correal
- *
  """
 
 import config as cf
+import time
 from App import model
 import csv
 
@@ -111,8 +108,12 @@ def minimumCostPaths(analyzer, initialStation):
     Calcula todos los caminos de costo minimo de initialStation a todas
     las otras estaciones del sistema
     """
-    return model.minimumCostPaths(analyzer, initialStation)
-
+    deltatime = -1.0
+    starttime = getTime()
+    paths = model.minimumCostPaths(analyzer, initialStation)
+    stoptime = getTime()
+    deltatime = stoptime - starttime
+    return paths, deltatime
 
 def hasPath(analyzer, destStation):
     """
@@ -134,3 +135,14 @@ def servedRoutes(analyzer):
     """
     maxvert, maxdeg = model.servedRoutes(analyzer)
     return maxvert, maxdeg
+
+# ___________________________________________________
+#  Funciones para medir tiempo
+# ___________________________________________________
+
+def getTime():
+    """
+    Retorna el instante de tiempo de procesamiento en
+    milisegundos
+    """
+    return float(time.perf_counter()*1000)
