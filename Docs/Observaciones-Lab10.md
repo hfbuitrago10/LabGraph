@@ -13,7 +13,7 @@ La función ```setrecursionlimit()``` de la librería ```sys``` se utiliza para 
 
 **2. ¿Por qué considera que se debe hacer este cambio?**
 
-Dado que el algoritmo dijkstra es un algoritmo recursivo, si se quiere determinar la ruta más corta desde un vértice a los demás vertices del grafo es posible que se supere el límite de recursión por defecto de python cuando el número de vértices del grafo sea lo suficientemente grande, de modo que se produciría un ```Runtime error``` al exceder el límite de recursión. Por esta razón, es importante cambiar el límite de recursión por defecto.
+Dado que el algoritmo dijkstra es un algoritmo recursivo, si se quiere determinar la ruta más corta desde un vértice a los demás vertices del grafo es posible que se supere el límite de recursión por defecto de Python cuando el número de vértices y arcos del grafo sea lo suficientemente grande, de modo que se produciría un ```Runtime error``` al exceder el límite de recursión. Por esta razón, es importante cambiar el límite de recursión establecido por defecto.
 
 **3. ¿Cuál es el valor inicial que tiene Python como límite de recursión?**
 
@@ -21,21 +21,23 @@ El valor inicial del límite de recursión de Python por defecto es 1000.
 
 **4. ¿Qué relación cree que existe entre el número de vértices, arcos y el tiempo que toma la operación 4?**
 
-|  | Opción 4 |
-| --- | --- |
-| ```bus_routes_50.csv``` | 37.20612 [ms] |
-| ```bus_routes_150.csv``` | 55.58470 [ms] |
-| ```bus_routes_300.csv``` | 84.90818 [ms] |
-| ```bus_routes_1000.csv``` | 363.12968 [ms] |
-| ```bus_routes_2000.csv``` | 1170.00451 [ms] |
-| ```bus_routes_3000.csv``` | 2441.46861 [ms] |
-| ```bus_routes_7000.csv``` | 8348.04481 [ms] |
-| ```bus_routes_10000.csv``` | 22003.47461 [ms] |
-| ```bus_routes_14000.csv``` | 39771.19583 [ms] |
+|  | Vértices | Arcos | Tiempo |
+| --- | --- | --- | --- |
+| ```bus_routes_50.csv``` | 74 | 73 | 37.20612 [ms] |
+| ```bus_routes_150.csv``` | 146 | 146 | 55.58470 [ms] |
+| ```bus_routes_300.csv``` | 295 | 382 | 84.90818 [ms] |
+| ```bus_routes_1000.csv``` | 984 | 1633 | 363.12968 [ms] |
+| ```bus_routes_2000.csv``` | 1954 | 3560 | 1170.00451 [ms] |
+| ```bus_routes_3000.csv``` | 2922 | 5773 | 2441.46861 [ms] |
+| ```bus_routes_7000.csv``` | 6829 | 15334 | 8348.04481 [ms] |
+| ```bus_routes_10000.csv``` | 9767 | 22758 | 22003.47461 [ms] |
+| ```bus_routes_14000.csv``` | 13535 | 32270 | 39771.19583 [ms] |
 
-Se observa que el tiempo de ejecución de la operación 4 aumenta conforme aumenta el número de vertices y de arcos del grafo.
+Se observa que el tiempo de ejecución de la operación 4 aumenta conforme aumenta el número de vertices y arcos del grafo.
 
 **5. ¿Qué características tiene el grafo definido?**
+
+El grafo es un grafo dirigido, en el que cada arco tiene una dirección desde un vértice hacia otro. Cada vértice representa una parada y cada arco una ruta desde una parada a otra, donde el peso de cada arco es la distancia entre dos paradas.
 
 **6. ¿Cuál es el tamaño inicial del grafo?**
 
