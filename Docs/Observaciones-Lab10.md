@@ -13,7 +13,7 @@ La función ```setrecursionlimit()``` de la librería ```sys``` se utiliza para 
 
 **2. ¿Por qué considera que se debe hacer este cambio?**
 
-Dado que el algoritmo dijkstra es un algoritmo recursivo, si se quiere determinar la ruta más corta desde un vértice a los demás vertices del grafo es posible que se supere el límite de recursión por defecto de Python cuando el número de vértices y arcos del grafo sea lo suficientemente grande, de modo que se produciría un ```Runtime error``` al exceder el límite de recursión. Por esta razón, es importante cambiar el límite de recursión establecido por defecto.
+Dado que el algoritmo dijkstra utilizado es un algoritmo recursivo, si se quiere determinar la ruta más corta desde un vértice a los demás vertices del grafo es posible que se supere el límite de recursión por defecto de Python cuando el número de vértices y arcos del grafo sea lo suficientemente grande, de modo que se produciría un ```Runtime error``` al exceder el límite de recursión. Por esta razón, es importante cambiar el límite de recursión establecido por defecto.
 
 **3. ¿Cuál es el valor inicial que tiene Python como límite de recursión?**
 
@@ -33,11 +33,11 @@ El valor inicial del límite de recursión de Python por defecto es 1000.
 | ```bus_routes_10000.csv``` | 9767 | 22758 | 22003.47461 [ms] |
 | ```bus_routes_14000.csv``` | 13535 | 32270 | 39771.19583 [ms] |
 
-Se observa que el tiempo de ejecución de la operación 4 aumenta conforme aumenta el número de vertices y arcos del grafo.
+Se observa que el tiempo de ejecución de la operación 4 aumenta conforme aumenta el número de vértices y arcos del grafo.
 
 **5. ¿Qué características tiene el grafo definido?**
 
-El grafo es un grafo dirigido, en el que cada arco tiene una dirección desde un vértice hacia otro. Cada vértice representa una parada y cada arco una ruta desde una parada a otra, donde el peso de cada arco es la distancia entre dos paradas.
+El grafo es un grafo dirigido, en el que cada arco tiene una sola dirección desde un vértice hacia otro. Cada vértice representa una parada y cada arco una ruta desde una parada a otra, donde el peso de cada arco es la distancia entre dos paradas. El grafo se implementa sobre una lista de adyacencia como estructura de datos principal con un tamaño inicial de 14000.
 
 **6. ¿Cuál es el tamaño inicial del grafo?**
 
@@ -59,7 +59,7 @@ def newAnalyzer():
     return analyzer
 ```
 
-Se observa que el tamaño inicial utilizado para la implementación del grafo es 14000.
+Se observa que el tamaño inicial utilizado para la implementación del grafo es de 14000.
 
 **7. ¿Cuál es la estructura de datos utilizada?**
 
@@ -81,7 +81,7 @@ def newAnalyzer():
     return analyzer
 ```
 
-Se observa que la estructura de datos utilizada para la implmentación del grafo es una lista de adyacencia.
+Se observa que la estructura de datos utilizada para la implementación del grafo es una lista de adyacencia ```'ADJ_LIST'```.
 
 **8. ¿Cuál es la función de comparación utilizada?**
 
